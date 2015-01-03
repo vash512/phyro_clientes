@@ -55,6 +55,7 @@ target/
 
 #Configuraciones Locales
 back-end/phyro/phyro/local_settings.py
+servidor/
 
 #Base de Datos
 *.sqlite3
