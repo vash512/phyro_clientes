@@ -1,0 +1,113 @@
+{% extends "blocks/base.html" %}
+{% block header %}
+<div class="fixed">
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name"><h1><a href="/" data-dropdown="mainMenu" data-options="is_hover:true"><img width="54" src="{{STATIC_URL}}img/logos/logo_phyroServer_150x150.png" alt="Agencia de Diseño, Desarrollo Web y Marketing Online">  <strong>PHYRO</strong></a></h1></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+        </ul>
+        
+        <section class="top-bar-section">
+            
+            <ul class="right">
+              <li class="active"><a href="/lo-que-hacemos" data-dropdown="mainServicios" data-options="is_hover:true"><span class="hide-for-large-up">SERVICIOS</span><span class="show-for-large-up">LO QUE HACEMOS</span></a></li>
+              <li class="divider"></li>
+              <li><a class="" href="/team">TEAM</a></li>
+              <li class="divider"></li>
+              <li><a href="/blog" target="_blank"><span class="hide-for-large-up">BLOG</span><span class="show-for-large-up">PHYRO BLOG</span></a></li>
+              <li class="divider"></li>
+              <li class="has-form">
+                <a href="/contacto" class="button">Contactanos!</a>
+              </li>
+            </ul>
+            
+        </section>
+            
+    </nav>
+        <ul id="mainMenu" class="f-dropdown" data-dropdown-content>
+          <li><a href="/"><i class="icon-home"></i><span class="mli"></span>Home</a></li>
+          <li><a href="/about-us"><i class="icon-books"></i><span class="mli"></span>Acerca de Nosotros</a></li>
+          <li><a href="/team"><i class="icon-wink"></i><span class="mli"></span>Nuestro Equipo</a></li>
+          <li><a href="/nuestro-trabajo"><i class="icon-rocket"></i><span class="mli"></span>Portafolio</a></li>
+        </ul>
+            <ul id="mainServicios" class="f-dropdown" data-dropdown-content>
+              <li><a href="/lo-que-hacemos/ecommerce"><i class="icon-shop"></i><span class="mli"></span>Ecommerce</a></li>
+              <li><a href="/lo-que-hacemos/websites"><i class="icon-screen"></i><span class="mli"></span>Páginas Web</a></li>
+              <li><a href="/lo-que-hacemos/ux-ui-design"><i class="icon-heart"></i><span class="mli"></span>Diseño UX y UI</a></li>
+              <li><a href="/lo-que-hacemos/marketing-online"><i class="icon-bullhorn"></i><span class="mli"></span>Marketing Online</a></li>
+              <li><a href="/lo-que-hacemos/aplicaciones-web"><i class="icon-mobile"></i><span class="mli"></span>Aplicaciones Web</a></li>
+            </ul>
+</div>
+
+    
+{% endblock %}
+{% block footer %}
+<footer class="mainFooter padding-top sFull">
+    <section class="row" id="newsletter">
+        <div class="medium-6 columns text-center">
+            <p> <strong>Únete a nuestro Newsletter si quieres saber más de Desarrollo, Diseño y Marketing Online </strong><em> ¡También lanzamos ofertas especiales!</em></p>
+        </div>
+        <div class="medium-6 columns text-center">
+            <form action="#" method="">
+                <div class="row collapse postfix-round">
+                    <div class="small-10 columns">
+                      <input type="email" name="newsletterMail" placeholder="Escribe aquí tu email" required>
+                    </div>
+                    <div class="small-2 columns">
+                      <a href="#" name="envNewsletter" class="button postfix round">Enviar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="row padding-top" id="sitemap">
+      
+      <div class="medium-6 columns text-center">
+        <ul class="no-bullet">
+          <li><a href="/lo-que-hacemos">LO QUE HACEMOS</a></li>
+          <li><a href="/lo-que-hacemos/websites">Paginas Web</a></li>
+          <li><a href="/lo-que-hacemos/ecommerce">Ecommerce</a></li>
+          <li><a href="/lo-que-hacemos/ux-ui-design">Diseño UX y UI</a></li>
+          <li><a href="/lo-que-hacemos/marketing-online">Marketing Online</a></li>
+          <li><a href="/lo-que-hacemos/aplicaciones-web">Desarrollo de Aplicaciones Web</a></li>
+        </ul>
+      </div>
+      <div class="medium-6 columns text-center">
+        <ul class="no-bullet">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/team">TEAM</a></li>
+          <li><a href="/blog">PHYRO BLOG</a></li>
+          <li><a href="/contacto">CONTACTANOS</a></li>
+          <li><a href="/nuestro-trabajo">NUESTRO TRABAJO</a></li>
+          <li><a href="/about-us">ACERCA DE NOSOTROS</a></li>
+        </ul>
+      </div> 
+    </section>
+    
+    <section class="row padding-top text-center">
+        <div class="medium-4 columns medium-text-right">
+            <p class="zeroM"><a href="http://bit.ly/PhyroMap" target="_blank">Clz. Adolfo Lopez Mateos #4017</a></p>
+            <p class="zeroM">Tehuacán, Pue.</p>
+            <p><a class="" href="mailto:hello@phyroserver.com">hello@phyroserver.com</a></p>
+        </div>
+        <div class="medium-4 columns">
+            <a href="/"><img width="54" src="{{STATIC_URL}}img/logos/logo_phyroServer_150x150.png" alt="Agencia de Diseño, Desarrollo Web y Marketing Online"></a>
+            <p><a href="/contacto">Desarrollamos tus Ideas</a></p>
+        </div>
+        <div class="medium-4 columns medium-text-left">
+          <div class="row">
+            <div class="small-7 small-centered medium-12 columns">
+              
+            
+            <ul class="inline-list">
+                <li><a href="/facebook"><span class="icon-facebook3 medium"></span></a></li>
+                <li><a href="/twitter"><span class="icon-twitter medium"></span></a></li>
+                <li><a href="/g+"><span class="icon-googleplus2 medium"></span></a></li>
+            </ul>
+            </div>
+          </div>
+            
+        </div>
+    </section>    
+</footer>
+{% endblock footer %}

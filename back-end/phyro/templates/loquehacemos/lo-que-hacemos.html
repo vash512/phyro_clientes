@@ -1,0 +1,76 @@
+{% extends "loquehacemos/lo-que-hacemos_SEO.html" %}
+{% block contenido %}
+<div class="sTop"></div>
+<header class="mainHeader padding-top">
+    <section class="row padding-top">
+        <div class="small-12 medium-8 medium-centered columns text-center">
+            <h1>Desarrollamos tus Ideas</h1>
+            <h5>Phyro es un  Estudio Creativo Digital. Enfocado en Desarrollar y Diseñar soluciones, en base a las ideas y necesidades de las marcas ( empresas),  para darles vida y conectar con sus clientes.</h5>
+        </div>
+    </section>
+</header>
+
+<section class="padding-top">
+    <article class="row">
+        <div class="small-12 columns text-center">
+            <h2>NUESTRA EXPERIENCIA</h2>
+            <ul class="menu hide">
+                <li><a href="#sTop">Lo que hacemos</a></li>
+                <li><a href="#ecommerce">Ecommerce</a></li>
+                <li><a href="#websites">Diseño y Desarrollo Web</a></li>
+                <li><a href="#mkt-online">Mkt Online</a></li>
+                <li><a href="#appWeb">APlicaciones Web</a></li>
+            </ul>
+        </div>
+    </article>
+</section>
+<section id="ecommerce" class="sFull">
+    <article class="row padding-top white">
+        <div class="medium-6 medium-centered columns text-center padding-top ecommerce">
+            <h2 class="white">Ecommerce</h2>
+            <p>Tu primer tienda en linea, lista para vender tus productos y servicios, experiencias altamente cautivadoras y estrategia de venta incluida.</p>
+            <p class=""><a class="button round" href="/lo-que-hacemos/ecommerce">Tu Tienda en Linea</a></p>
+            <p><a href="#websites" class="intLink"><i class="icon-arrow-down medium"></i></a></p>
+        </div>
+    </article>
+</section>
+
+<section id="websites" class="sFull">
+    <article class="row padding-top">
+        <div class="medium-6 medium-centered columns text-center padding-top white websites">
+            <h2 class="white">Diseño y Desarrollo Web</h2>
+            <p>El sitio web para promocionar tu marca y productos, visualizada perfectamente en cualquier dispositivo. Ideal para empresarios y emprendedores.</p>
+            <p class=""><a class="button round" href="/lo-que-hacemos/websites">Tu Sitio Web</a></p>
+            <p><a href="#mkt-online" class="intLink"><i class="icon-arrow-down medium"></i></a></p>
+        </div>
+    </article>
+    
+</section>
+
+<section id="mkt-online" class="sFull">
+    <article class="row padding-top">
+        <div class="medium-6 medium-centered columns text-center padding-top white mkt-online">
+            <h2 class="white">Marketing Online</h2>
+            <p>Te brindamos las herramientas e ideas que se adecuan a tu campaña para lograr el mejor posicionamiento en el mundo dígital</p>
+            <p class=""><a class="button round" href="/lo-que-hacemos/marketing-online">Logra tus Objetivos</a></p>
+            <p><a class="intLink" href="#appWeb"><i class="icon-arrow-down medium"></i></a></p>
+        </div>
+        
+    </article>
+</section>
+
+<section id="appWeb" class="sFull">
+    <article class="row padding-top">
+        <div class="medium-6 medium-centered columns text-center padding-top white appWeb">
+            <h2 class="white">Aplicaciones Web</h2>
+            <p>Convertimos tu idea en una aplicación que agilize tu trabajo, sea movil, flexible y genere un valor agregado a tu empresa.</p>
+            <p><a class="button round" href="/lo-que-hacemos/aplicaciones-web">Desarrollemos tu Idea</a></p>
+            <p><a class="intLink" href="#sTop"><i class="icon-home medium"></i></a></p>
+        </div>
+    </article>
+</section>
+{% endblock contenido %}
+
+{% block moreJS %}
+<script src="{{STATIC_URL}}js/vendor/jquery.smint.js"></script>
+{% endblock moreJS %}

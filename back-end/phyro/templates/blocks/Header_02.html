@@ -1,0 +1,81 @@
+{% extends "blocks/base.html" %}
+{% block header %}
+
+<nav class="hide-for-small-down">
+    <div class="row text-center">
+        <div class="medium-5 columns">
+            <div class="row">
+                <div class="medium-4 columns text-right padding-top">
+                    <h5><a href="/blog">BLOG</a></h5>
+                </div>
+                <div class="medium-8 columns text-right padding-top">
+                    <h5><a href="/lo-que-hacemos">LO QUE HACEMOS</a></h5>
+                </div>
+            </div>
+        </div>
+        <div class="medium-2 columns">
+            <a href="/" title="HOME"><img width="100" src="{{STATIC_URL}}img/logos/logo_phyroServer_150x150.png" alt="Desarrollamos tus Ideas"></a>
+        </div>
+        <div class="medium-5 columns ">
+            <div class="row">
+                <div class="medium-8 columns text-left padding-top">
+                    <h5><a href="/team">NUESTRO EQUIPO</a></h5>
+                </div> 
+                <div class="medium-4 columns text-left padding-top">
+                    <h5><a href="">CONTACTANOS!</a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<nav class="show-for-small-down">
+    <div class="row">
+        <div class="small-10 columns">
+            <h4><a href="/" title="HOME"><img width="50px" src="{{STATIC_URL}}img/logos/logo_phyroServer_150x150.png" alt="Desarrollamos tus Ideas">PHYRO</a></h4>
+        </div>
+        
+        <div class="small-2 columns text-right menu-padding">
+            <a href="#" title="Menu" data-dropdown="mainServicios" data-options="is_hover:true"><i class="icon-arrow-down2 medium"></i></a>
+        </div>
+    </div>
+</nav>
+
+{% endblock header %}
+
+{% block footer %}
+<div id="shareModal" class="reveal-modal tiny" style="display: none" data-reveal>
+  <h3>Comparte esta página</h3>
+  <a href="https://www.facebook.com/dialog/share?app_id=504922086287468&display=popup&href=http://phyroserver.com&redirect_uri=http://phyroserver.com" target="_blank" class="button round expand"><i class="icon-facebook2"></i> Facebook</a>
+  <a href="https://twitter.com/share?url={% block rel_canonical%}{% endblock rel_canonical%}&text=Phyro%20Desarrollamos%20tus%20Ideas!" target="_blank" class="button round expand"><i class="icon-twitter"></i> Twitter</a>
+  <a href="https://twitter.com/share?" target="_blank" class="button round expand"><i class="icon-googleplus2"></i> Google+</a>
+  <a data-text="Desarrollamos tus ideas!" href="mailto:?Subjet:Phyro!%20Desarrollamos%20tus%20ideas&body=Te+comparto+esta+página+web+http://phyroserver.com" target="_blank" class="button round expand"><i class="icon-export"></i> Email</a>
+  <div class="fb-share-button" data-layout="button" data-href="http://phyroserver.com"></div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<footer class="padding-top">
+    <div class="row">
+        <div class="medium-8 medium-centered columns text-center">
+            <div class="row">
+                <div class="small-4 columns">
+                    <div class="show-for-medium-up">
+                    <a href="mailto:hello@phyroserver.com"><i class="icon-location"></i>hello@phyroserver.com</a></div>
+                    <div class="show-for-small-only">
+                    <a href="mailto:hello@phyroserver.com"><p class="zeroM"><small>hello</small></p><p class="zeroM">@</p><p class="zeroM"><small>phyroserver.com</small></p></a></div>
+                </div>
+                <div class="small-4 columns">
+                    <a href="/" title="Welcome to Phyro!"><img width="50px" src="{{STATIC_URL}}img/logos/logo_phyroServer_150x150.png" alt="Desarrollamos tus Ideas"></a>
+                    <h5><a href="/" title="Welcome to Phyro!">PHYRO</a></h5>
+                </div>
+                <div class="small-4 columns text-center">
+                    <ul class="inline-list">
+                        <li><a href="http://bit.ly/FacebookPhyro" title="facebook" target="_blank"><i class="icon-facebook2 socialMedia"></i></a></li>
+                        <li><a href="https://twitter.com/PhyroServer" title="twitter" target="_blank"><i class="icon-twitter socialMedia" ></i></a></li>
+                        <li><a href="" title="google plus" target="_blank"><i class="icon-googleplus2 socialMedia" ></i></a></li>
+                        <li><a href="#" data-reveal-id="shareModal" title="compartir"><i class="icon-share socialMedia" ></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock footer %}

@@ -52,3 +52,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#Configuraciones Locales
+back-end/phyro/phyro/local_settings.py
+
+#Base de Datos
+*.sqlite3

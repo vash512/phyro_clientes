@@ -1,0 +1,324 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400,700");
+body, h1, h2, h3, h4, h5, p{
+    font-weight:600;
+}
+nav h4 a img{
+    margin-top: -5px;
+}
+footer{
+    background: #ebe9e5;
+
+}
+footer h2, footer h3 a, footer h4 a, footer h5 a, footer h5 {
+    color: #fff;
+    font-weight: bold;
+    -webkit-transition: .6s ease;
+            transition: .6s ease;
+}
+footer h5:last-child{
+    color: #d0233c;
+}
+
+footer h5 a:hover,footer h4 a:hover,footer h3 a:hover{
+    color: #55ACEE;
+
+}
+#head h5, #head h3, #head h2{
+    color:white;
+}
+#head h3{
+    text-shadow: 0px 0px 10px rgba(144, 144, 144, 1);
+}
+.h2Text{
+    font-size: 3em;
+}
+.nav-movil{
+    font-weight: 900;
+    margin-bottom: 0;
+}
+.button{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.padding-logo{
+    padding-top: .7em;
+}
+.mr{
+    margin-right: 10px;
+}
+#menu-movil li{
+    padding-bottom: 10px;
+    font-weight: 900;
+}
+.bg-white{
+    background-color: rgba(255,255,255,1);
+}
+.inline{
+    display: inline;
+}
+.nav-menu{
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 2em;
+    -webkit-transition: all 1s ease;
+            transition: all 1s ease;
+}
+.nav-menu:hover{
+    color: rgba(100,100,100,0.8);
+}
+.orange:hover{
+    color: #E76914;
+}
+.blue:hover{
+    color: #2ba6cb;
+}
+.green:hover{
+    color: #43ac6a;
+}
+.yellow:hover{
+    color: #FFD800;
+}
+.small{
+    font-size: 1em;
+    margin-right: .4em;
+}
+.tBold{
+    font-weight: normal;
+}
+.mli{
+    margin-left: .4em;
+}
+.primaryC{
+    color: #d0233c;
+}
+.orbit-timer {
+left: -10000px;
+top: auto;
+height: 1px;
+overflow: hidden;
+position: absolute;
+width: 1px;
+}
+.sFull{
+    height: 100vh; 
+}
+.header-index{
+    background: url('/static/img/home/home_head_01.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.zeroM{
+    margin: 0px;
+}
+#websites{
+    /*background: url(/static/img/whatwedo/website_03.jpg) 80% 0% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh; */
+}
+.medium{
+    font-size: 2em;
+}
+.socialMedia{
+    font-size: 1.2em;
+    -webkit-transition:all .5s ease;
+            transition:all .5s ease;
+}
+.socialMedia:hover{
+    font-size: 1.5em;
+}
+.large{
+    font-size: 4em;
+}
+.white{
+    color:#fff;
+    text-shadow: 0px 0px 10px rgba(144, 144, 144, 1);
+}
+.menu-padding{
+    padding-top: 1em;
+    padding-bottom: .1em;
+}
+.padding-top{
+    padding-top: 2.5em;
+}
+.padding-top-large{
+    padding-top: 5em;
+}
+.contact{
+    padding-top: 3em;
+    padding-bottom: 5em;
+}
+#ecommerce{
+    background: url(/static/img/whatwedo/ecommerce_01.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+#websites{
+    background: url(/static/img/whatwedo/webDevelopment_01.jpg) no-repeat 90% 50%;
+    background-size: cover;
+}
+#mkt-online{
+    background: url(/static/img/whatwedo/marketingOnline_01.jpg) no-repeat 14% 50%;
+    background-size: cover;
+}
+#appWeb{
+    background: url(/static/img/whatwedo/aplicacionesWeb_01.jpg) no-repeat 90% 50%;
+    background-size: cover;
+}
+#foo { 
+    background: url(/static/img/phyro.location_01.jpg) no-repeat 50% 0%;
+    background-size: cover;
+    
+}
+.grid {
+    position: relative;
+    margin: 0 auto;
+    padding: 1em 0 4em;
+    max-width: 100%;
+    list-style: none;
+    text-align: center;
+}
+.grid figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 320px;
+    max-width: 480px;
+    max-height: 360px;
+    width: 100%;
+    background: #2A2A2A;
+    text-align: center;
+    cursor: pointer;
+}
+
+.grid figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.8;
+}
+
+.grid figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+    pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+}
+
+.grid figure h2 {
+    word-spacing: -0.15em;
+    font-weight: 300;
+    color: #fff;
+}
+
+.grid figure h2 span {
+    font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+    margin: 0;
+}
+
+.grid figure p {
+    letter-spacing: 1px;
+    font-size: 68.5%;
+}
+figure.effect-chico img {
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(1.12);
+    -ms-transform: scale(1.12);
+        transform: scale(1.12);
+}
+
+figure.effect-chico:hover img {
+    opacity: 0.5;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+        transform: scale(1);
+}
+
+figure.effect-chico figcaption {
+    padding: 3em;
+}
+
+figure.effect-chico figcaption::before {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    border: 1px solid #fff;
+    content: '';
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+        transform: scale(1.1);
+}
+
+figure.effect-chico figcaption::before,
+figure.effect-chico p {
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-chico h2 {
+    padding: 20% 0 20px 0;
+}
+
+figure.effect-chico p {
+    margin: 0 auto;
+    max-width: 200px;
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+        transform: scale(1.5);
+}
+
+figure.effect-chico:hover figcaption::before,
+figure.effect-chico:hover p {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+        transform: scale(1);
+}
+
+@media screen and (max-width: 50em) {
+    .content {
+        padding: 0 10px;
+        text-align: center;
+    }
+    .grid figure {
+        display: inline-block;
+        float: none;
+        margin: 10px auto;
+        width: 100%;
+    }
+}

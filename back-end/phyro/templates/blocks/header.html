@@ -1,0 +1,62 @@
+{% extends "blocks/base.html" %}
+{% block header %}
+<nav class="bg-white fixed">
+    <div class="row">
+        <div class="small-8 medium-2 large-2 columns menu-padding">
+            <h4 class="inline"><a href="/" title="Home"><img width="50px" src="{{STATIC_URL}}img/logos/logo_phyroServer_150x150.png" alt="Desarrollamos tus Ideas"></a>  <a class="nav-movil show-for-small-only" href="/" title="Home">PHYRO</a></h4>
+        </div>
+        
+        <div class="small-4 medium-10 large-10 columns menu-padding">
+            <p class="text-right show-for-small-only">
+                <a href="#" data-reveal-id="menuModal" title="Menu"><i class="icon-arrow-down medium nav-menu"></i></a>
+            </p>
+            <p class="text-right hide-for-small-only nav-movil">
+                <a href="/lo-que-hacemos" class="yellow mr">LO QUE HACEMOS</a>
+                <a href="/nuestro-trabajo" class="orange mr">NUESTRO TRABAJO</a>
+                <a href="/team" class="blue mr">TEAM</a>
+                <a href="/blog" class="green mr" target="_blank">PHYRO LAB</a>
+                <a href="/contacto" class="button round success tiny"><strong>CONTACTANOS!</strong></a>
+            </p>
+        
+        </div>
+        
+    </div>
+</nav>
+<div id="menuModal" class="reveal-modal small" data-reveal>
+    <h4 class="text-center">PHYRO</h4>
+    <nav>
+        <ul id="menu-movil" class="no-bullet text-center">
+            <li><a href="/"><i class="icon-home small"></i>HOME</a></li>
+            <li><a href="/lo-que-hacemos" class="blue"><i class="icon-html5 small"></i>LO QUE HACEMOS</a></li>
+            <li><a href="/nuestro-trabajo"><i class="icon-github small"></i>NUESTRO TRABAJO</a></li>
+            <li><a href="/team"><i class="icon-file-xml small"></i>TEAM PHYRO</a></li>
+            <li><a href="/blog" class="green" target="_blank"><i class="icon-lab small"></i>PHYRO LAB!</a></li>
+        </ul>
+        
+            <p class="text-center"><a href="/contacto" class="button round tiny success"><i class="icon-phone small"></i>CONTACTANOS!</a></p>
+          
+        
+        
+    </nav>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+{% endblock header %}
+
+{% block footer %}
+<footer id="foo">
+   <div class="row">
+       <div class="small-12 medium-8 medium-centered large-6 large-centered columns text-center contact">
+            <h2>Llamanos</h2>
+            <hr />
+            <h5>¿Tienes una idea o proyecto creativo? Nos encantaria escucharte.</h5>
+
+           <h3 class="padding-top"><a href="mailto:hello@phyroserver.com"><i class="icon-mail small"></i>hello@phyroserver.com</a></h3>
+            <h4><a href="/twitter" target="_blank"><i class="icon-twitter small"></i>@PhyroServer</a></h4>
+            <h5><a href="tel:2384094571"><i class="icon-phone small"></i>238-409-4571</a></h5>
+            <h5><a href="/mapa"><i class="icon-location small"></i>Clz. Adolfo López Mateos #4017</a></h5>
+            <h5>Tehuacán, Puebla. México.</h5>
+
+       </div>
+   </div>
+</footer>
+{% endblock footer %}
