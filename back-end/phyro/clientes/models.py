@@ -21,6 +21,7 @@ class Telefono(models.Model):
         return "%s %s"%(self.cliente, self.telefono)
 
 class Proyecto(models.Model):
+    cliente = models.ForeignKey(User, blank=True, null=True)
     titulo = models.CharField(max_length=50)
     eslogan = models.CharField(max_length=255)
     descripcion = models.TextField(help_text="Descripcion Detallada, Sera el inicio de su documentacion, recomendamos dedicarle tiempo")
