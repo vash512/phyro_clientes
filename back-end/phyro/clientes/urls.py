@@ -13,7 +13,7 @@ urlpatterns=patterns('clientes.views',
     #url(r'^(?P<aviso>[\w\-]+)/$','aviso'),
 )
 
-if DEBUG:
+if settings.DEBUG:
     urlpatterns+=patterns('',
         url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
             {'document_root':settings.MEDIA_ROOT,} ),
