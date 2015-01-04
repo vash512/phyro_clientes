@@ -1,11 +1,25 @@
-from django.conf.urls import patterns, url, include
+from django.conf.urls import patterns, include, url
+from django.conf import settings
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns=patterns('clientes.views',
     url(r'^$','index'),
-    #url(r'^tag/','sin_permisos'),
+    url(r'^logout/$','log_out'),
     #url(r'^tag/','errorLogin'),
 
 
     #url(r'^tag/(?P<tag>[\w\-]+)/$','tag_aviso'),
     #url(r'^(?P<aviso>[\w\-]+)/$','aviso'),
 )
+
+if DEBUG:
+    urlpatterns+=patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root':settings.MEDIA_ROOT,} ),
+    )
+
+    urlpatterns+=patterns('',
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root':settings.STATICFILES_DIRS,} ),
+    )

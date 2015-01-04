@@ -2,9 +2,6 @@ from phyro.local_settings import *
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-DEBUG = True
-
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -70,3 +67,5 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+MEDIA_URL = '/media/'

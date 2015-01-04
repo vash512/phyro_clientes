@@ -15,6 +15,7 @@
                 <a href="/nuestro-trabajo" class="orange mr">NUESTRO TRABAJO</a>
                 <a href="/team" class="blue mr">TEAM</a>
                 <a href="/blog" class="green mr" target="_blank">PHYRO LAB</a>
+                {%if usuario%}<a href="/logout" class="green mr">LOG OUT {{usuario.username}}</a>{%endif%}
                 <a href="/contacto" class="button round success tiny"><strong>CONTACTANOS!</strong></a>
             </p>
         
@@ -31,6 +32,7 @@
             <li><a href="/nuestro-trabajo"><i class="icon-github small"></i>NUESTRO TRABAJO</a></li>
             <li><a href="/team"><i class="icon-file-xml small"></i>TEAM PHYRO</a></li>
             <li><a href="/blog" class="green" target="_blank"><i class="icon-lab small"></i>PHYRO LAB!</a></li>
+            {%if usuario%}<li><a href="/logout" class="green"><i class="icon-lab small"></i>LOG OUT {{usuario.username}}</a></li>{%endif%}
         </ul>
         
             <p class="text-center"><a href="/contacto" class="button round tiny success"><i class="icon-phone small"></i>CONTACTANOS!</a></p>

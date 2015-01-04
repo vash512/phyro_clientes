@@ -2,8 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Cliente(models.Model):
-    usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(User, unique=True)
     nombre = models.CharField(max_length=50)
+    imagen = models.ImageField(upload_to='asets/items/u', blank=True, null=True)
     descripcion = models.TextField()
     preferencias = models.ManyToManyField("Preferencia")
     direccion = models.TextField()

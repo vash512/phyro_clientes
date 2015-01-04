@@ -1,51 +1,14 @@
 {% extends "home/index_SEO.html" %}
 {% block contenido %}
-<header class="padding-top header-index">
-    <section class="row sFull">
-        <div id="head"class="small-12 medium-8 medium-centered columns text-center padding-top">
-            <div class="padding-top show-for-medium-up"></div>
-            <h5><strong>Phyro | Estudio Creativo Dígital</strong></h5>
-            <div class="show-for-medium-up">
-                <h2 class="h2Text">DESARROLLAMOS</h2>
-                <h2 class="h2Text"><strong>TUS IDEAS</strong></h2>
-            </div>
-            <div class="show-for-small-only">
-                <h2>DESARROLLAMOS</h2>
-                <h2><strong>TUS IDEAS</strong></h2>
-            </div>
-            <hr>
-            <div class="show-for-medium-up padding-top"></div>
-            <h5 style="color:#d0233c;">Y las herramientas que necesites para:</h5>
-            <ul class="toolPhyro" data-orbit 
-                  data-options="animation_speed:800;
-                  timer_speed: 2700;
-                  slide_number: false;
-                  pause_on_hover: false;
-                  navigation_arrows:false;
-                  bullets:true;">
-                <li><h3><strong>ENCONTRAR NUEVOS MERCADOS</strong></h3></li>
-                <li><h3><strong>REDISEÑAR TU SITIO WEB</strong></h3></li>
-                <li><h3><strong>CREAR TU PRIMER TIENDA EN LÍNEA</strong></h3></li>
-            </ul>
-            <div class="row">
-                <div class="small-6 columns">
-                    <a href="/contacto" class="button round expand zeroM CTA"><strong>LLAMANOS</strong></a>
-                </div>
-                <div class="small-6 columns">
-                    <a href="/lo-que-hacemos" class="button round expand zeroM CTA"><strong>CONOCENOS</strong></a>
-                </div>
-            </div>
-        </div>
-    </section>
-</header>
 <section class="padding-top ">
+    <hr>
+    {%if perfil%}
     <article class="row">
         <div class="large-6 columns text-center ">
-            <h3><a href="/team"><strong>QUIENES SOMOS</strong></a></h3>
-            <h2>DESARROLLAMOS LAS IDEAS</h2>
+            <h3><a href="/team"><strong>{{perfil.nombre}}</strong></a></h3>
             <div class="row">
                 <div class="medium-8 medium-centered large-12 columns">
-                    <p>Phyro es un grupo de amigos a los que nos apasiona la tecnología, cada miembro del equipo esta especialiado en areas:</p>
+                    <p>{{perfil.descripcion}}</p>
                 </div>
             </div>
             
@@ -56,17 +19,17 @@
                   pause_on_hover: false;
                   navigation_arrows:false;
                   bullets:true;">
-                <li><h3><a href="#"><strong>Marketing Dígital</strong></a></h3></li>
-                <li><h3><a href="#"><strong>Sistemas</strong></a></h3></li>
-                <li><h3><a href="#"><strong>Diseño</strong></a></h3></li>
-                <li><h3><a href="#"><strong>Fotografía</strong></a></h3></li>
+                {%for tag in perfil.preferencias.all%}
+                <li><h3><a href="#"><strong>{{tag}}</strong></a></h3></li>
+                {%endfor%}
             </ul>
             
         </div>
         <div class="large-6 columns text-center">
-            <img class="th" src="{{STATIC_URL}}img/home/team_01.jpg" alt="Somos una Agencia de Desarrollo y Diseño Web Autodidactas y Apasionados de la web">
+            <img class="th" src="{{MEDIA_URL}}{{perfil.imagen}}" alt="Somos una Agencia de Desarrollo y Diseño Web Autodidactas y Apasionados de la web">
         </div>
     </article>
+    {%endif%}
     <div class="padding-top"></div>
     
 </section>

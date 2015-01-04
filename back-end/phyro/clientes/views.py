@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponsePermanentRedirect as redirect301
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
+from clientes.models import Cliente
 
 
 
@@ -24,9 +26,7 @@ def index(request):
                     if acceso.is_active:
                         login(request,acceso)
                         #Pantalla del Perfil
-                        ctx={'usuario':usuario}
-                        return render_to_response('home/index.html', ctx,
-                          context_instance=RequestContext(request))
+                        return HttpResponseRedirect('/')
                     else:
                         error="Posiblemente tu usuario este baneado o desactivado, comunicate con el administrador"
                 else:
@@ -44,6 +44,15 @@ def index(request):
                           context_instance=RequestContext(request))
     else:
         #Pantalla del Perfil
-        ctx={'usuario':usuario}
+        try:
+            perfil=Cliente.objects.get(usuario=usuario)
+        except :
+            perfil=None
+        ctx={'usuario':usuario, 'perfil':perfil}
         return render_to_response('home/index.html', ctx,
                           context_instance=RequestContext(request))
+
+@login_required(login_url='/')
+def log_out(request):
+    logout(request)
+    return HttpResponseRedirect('/')
