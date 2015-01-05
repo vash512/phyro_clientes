@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from actions import Archivador
+from django.forms import ModelForm
 from django.shortcuts import render_to_response
 from django.shortcuts import redirect
 from django.template import RequestContext
@@ -9,6 +10,10 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from clientes.models import Cliente
+
+class PerfilForm(ModelForm):
+    class Meta:
+        model = Cliente
 
 
 
@@ -56,3 +61,9 @@ def index(request):
 def log_out(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+def registro(request):
+    fRegistro=PerfilForm()
+    ctx={"registro":fRegistro}
+    return render_to_response('home/registro.html', ctx,
+                          context_instance=RequestContext(request))

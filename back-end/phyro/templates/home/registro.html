@@ -1,0 +1,37 @@
+{% extends "home/index_SEO.html" %}
+{% block contenido %}
+<section class="padding-top ">
+    <hr>
+    
+    <article class="row">
+        <div class="large-6 columns text-center ">
+            <h3><a href="/team"><strong></strong></a></h3>
+            <div class="row">
+                <div class="medium-8 medium-centered large-12 columns">
+                    <p></p>
+                </div>
+            </div>
+            {{registro}}
+            
+            <ul class="toolPhyro" data-orbit 
+                  data-options="animation_speed:800;
+                  timer_speed: 2500;
+                  slide_number: false;
+                  pause_on_hover: false;
+                  navigation_arrows:false;
+                  bullets:true;">
+            </ul>
+            
+        </div>
+        <div class="large-6 columns text-center">
+            <img class="th" src="{{MEDIA_URL}}" alt="Somos una Agencia de Desarrollo y Diseño Web Autodidactas y Apasionados de la web">
+        </div>
+    </article>
+    
+    <div class="padding-top"></div>
+    
+</section>
+
+{% endblock %}
+
+

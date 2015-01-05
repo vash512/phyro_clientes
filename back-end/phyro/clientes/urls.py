@@ -6,6 +6,7 @@ admin.autodiscover()
 urlpatterns=patterns('clientes.views',
     url(r'^$','index'),
     url(r'^logout/$','log_out'),
+    url(r'^registro/$','registro'),
     #url(r'^tag/','errorLogin'),
 
 
