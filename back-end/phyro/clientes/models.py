@@ -2,13 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Cliente(models.Model):
-    usuario = models.ForeignKey(User, unique=True)
+    usuario = models.ForeignKey(User, unique=True, blank=True, null=True)
     nombre = models.CharField(max_length=50)
     imagen = models.ImageField(upload_to='asets/items/u', blank=True, null=True)
-    descripcion = models.TextField()
+    descripcion = models.TextField(blank=True, null=True)
     preferencias = models.ManyToManyField("Preferencia", blank=True, null=True)
     direccion = models.TextField(blank=True, null=True)
-    correo = models.EmailField()
+    correo = models.EmailField(unique=True)
     twitter = models.URLField(blank=True, null=True)
     facebook = models.URLField(blank=True, null=True)
     def __unicode__(self):

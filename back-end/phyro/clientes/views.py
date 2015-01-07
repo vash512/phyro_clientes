@@ -10,10 +10,12 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from clientes.models import Cliente
+from django.contrib.auth.forms import UserCreationForm
 
 class PerfilForm(ModelForm):
     class Meta:
         model = Cliente
+        fields = ["correo", "nombre", "preferencias", "descripcion"]
 
 
 
@@ -63,7 +65,24 @@ def log_out(request):
     return HttpResponseRedirect('/')
 
 def registro(request):
-    fRegistro=PerfilForm()
-    ctx={"registro":fRegistro}
-    return render_to_response('home/registro.html', ctx,
+    usuario=request.user
+    if not usuario.is_anonymous():
+        return HttpResponseRedirect('/')
+    else:
+        registrado=False
+        if request.method=='POST':
+            fRegistro=PerfilForm(request.POST)
+            fUsuario=UserCreationForm(request.POST)
+            if fUsuario.is_valid() and fRegistro.is_valid():
+                usuario=fUsuario.save()
+                perfil=fRegistro.save()
+                perfil.usuario=usuario
+                perfil.save()
+                registrado=True
+
+        else:
+            fRegistro=PerfilForm()
+            fUsuario=UserCreationForm()
+        ctx={"registro":fRegistro, "fUsuario":fUsuario, "registrado":registrado}
+        return render_to_response('home/registro.html', ctx,
                           context_instance=RequestContext(request))
