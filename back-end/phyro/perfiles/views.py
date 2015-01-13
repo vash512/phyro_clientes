@@ -88,10 +88,20 @@ def registro(request):
         return render_to_response('home/registro.html', ctx,
                           context_instance=RequestContext(request))
 
-def perfil_view(request):
-    return render_to_response('home/login.html',
+@login_required(login_url='/')
+def index_perfil(request, perfil):
+    usuario=request.user
+    if "%s"%usuario.username == "%s"%perfil:
+        try:
+            perfil=Cliente.objects.get(usuario=usuario)
+        except :
+            perfil=None
+        ctx={'usuario':usuario, 'perfil':perfil}
+        return render_to_response('home/index.html', ctx,
                           context_instance=RequestContext(request))
+    else:
+        return HttpResponseRedirect('/')
 
 def proyectos_view(request):
-    return render_to_response('home/login.html',
+    return render_to_response('home/index.html',
                           context_instance=RequestContext(request))

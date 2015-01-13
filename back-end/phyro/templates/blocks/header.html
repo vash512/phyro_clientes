@@ -11,12 +11,19 @@
                 <a href="#" data-reveal-id="menuModal" title="Menu"><i class="icon-arrow-down medium nav-menu"></i></a>
             </p>
             <p class="text-right hide-for-small-only nav-movil">
+                {%if usuario%}
+                <a href="/{{usuario.username}}" class="yellow mr">{{usuario.username}}</a>
+                <a href="/proyectos" class="orange mr">MIS PROYECTOS</a>
+                <a href="http://phyro.phyroserver.com/" class="blue mr">PHYRO</a>
+                <a href="/logout" class="green mr">LOG OUT</a>
+                <a href="/contacto" class="button round success tiny"><strong>CONTACTANOS!</strong></a>
+                {%else%}
                 <a href="/lo-que-hacemos" class="yellow mr">LO QUE HACEMOS</a>
                 <a href="/nuestro-trabajo" class="orange mr">NUESTRO TRABAJO</a>
                 <a href="/team" class="blue mr">TEAM</a>
                 <a href="/blog" class="green mr" target="_blank">PHYRO LAB</a>
-                {%if usuario%}<a href="/logout" class="green mr">LOG OUT {{usuario.username}}</a>{%endif%}
                 <a href="/contacto" class="button round success tiny"><strong>CONTACTANOS!</strong></a>
+                {%endif%}
             </p>
         
         </div>
@@ -27,12 +34,17 @@
     <h4 class="text-center">PHYRO</h4>
     <nav>
         <ul id="menu-movil" class="no-bullet text-center">
-            <li><a href="/"><i class="icon-home small"></i>HOME</a></li>
-            <li><a href="/lo-que-hacemos" class="blue"><i class="icon-html5 small"></i>LO QUE HACEMOS</a></li>
-            <li><a href="/nuestro-trabajo"><i class="icon-github small"></i>NUESTRO TRABAJO</a></li>
-            <li><a href="/team"><i class="icon-file-xml small"></i>TEAM PHYRO</a></li>
-            <li><a href="/blog" class="green" target="_blank"><i class="icon-lab small"></i>PHYRO LAB!</a></li>
-            {%if usuario%}<li><a href="/logout" class="green"><i class="icon-lab small"></i>LOG OUT {{usuario.username}}</a></li>{%endif%}
+            {%if usuario%}
+            <a href="/{{usuario.username}}" class="yellow mr">{{usuario.username}}</a>
+            <a href="/proyectos" class="orange mr">MIS PROYECTOS</a>
+            <a href="http://phyro.phyroserver.com/" class="blue mr">PHYRO</a>
+            <a href="/logout" class="green mr">LOG OUT</a>
+            {%else%}
+            <li><a href="/{{usuario.username}}"><i class="icon-home small"></i>{{usuario.username}}</a></li>
+            <li><a href="/proyectos" class="blue"><i class="icon-html5 small"></i>MIS PROYECTOS</a></li>
+            <li><a href="http://phyro.phyroserver.com/"><i class="icon-github small"></i>PHYRO</a></li>
+            <li><a href="/logout"><i class="icon-file-xml small"></i>LOG OUT</a></li>
+            {%endif%}
         </ul>
         
             <p class="text-center"><a href="/contacto" class="button round tiny success"><i class="icon-phone small"></i>CONTACTANOS!</a></p>

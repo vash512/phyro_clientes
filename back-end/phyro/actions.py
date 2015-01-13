@@ -4,6 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import Context
 from django.template.loader import get_template
 from django.utils.encoding import smart_str
+import re
 
 def Normalizador(txt):
     #Normalizar texto
@@ -32,3 +33,11 @@ def Archivador(plantilla, nombre, diccionario):
     archivo=open('phyro_render/%s.html'%nombre,'w')
     archivo.write(html_content)
     archivo.close()
+
+def Exclusiones(cadena):
+    p = re.compile('admin*', re.IGNORECASE)
+    validar = p.match(cadena)
+    if validar:
+        return True
+    else:
+        return False

@@ -3,14 +3,9 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns=patterns('clientes.views',
-    url(r'^$','index'),
-    url(r'^logout/$','log_out'),
-    url(r'^registro/$','registro'),
-    #url(r'^proyectos/$','proyectos_view'),
-    #url(r'^(?P<perfil>[\w\-]+)/$','perfil_view'),
-
-
+urlpatterns=patterns('perfiles.views',
+    url(r'^$','index_perfil'),
+    url(r'^proyectos/$','proyectos_view'),
     #url(r'^tag/(?P<tag>[\w\-]+)/$','tag_aviso'),
     #url(r'^(?P<perfil>[\w\-]+)/$','perfil_view'),
 )

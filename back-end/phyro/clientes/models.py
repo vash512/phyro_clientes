@@ -73,3 +73,15 @@ class Requerimiento(models.Model):
     requerimiento = models.CharField(max_length=50)
     def __unicode__(self):
         return self.requerimiento
+
+class PresupuestoPendiente(models.Model):
+    proyecto = models.ForeignKey(Proyecto)
+    registro = models.DateField(auto_now=True)
+
+    class Meta:
+        verbose_name = "PresupuestoPendiente"
+        verbose_name_plural = "PresupuestosPendientes"
+
+    def __unicode__(self):
+        pass
+    
