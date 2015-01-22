@@ -37,10 +37,12 @@
     <nav>
         <ul id="menu-movil" class="no-bullet text-center">
             {%if usuario%}
-            <a href="/{{usuario.username}}" class="yellow mr">{{usuario.username}}</a>
-            <a href="/proyectos" class="orange mr">MIS PROYECTOS</a>
-            <a href="http://phyro.phyroserver.com/" class="blue mr">PHYRO</a>
-            <a href="/logout" class="green mr">LOG OUT</a>
+            <li><a href="/{{usuario.username}}" class="yellow mr"><i class="icon-home small"></i>{{usuario.username}}</a></li>
+            <li><a href="/{{usuario.username}}/edit" class="orange mr"><i class="icon-home small"></i>EDITAR PERFIL</a></li>
+            <li><a href="/{{usuario.username}}/proyectos" class="orange mr"><i class="icon-home small"></i>MIS PROYECTOS</a></li>
+            <li><a href="/{{usuario.username}}/proyectos/nuevo" class="orange mr"><i class="icon-home small"></i>NUEVO PROYECTO</a></li>
+            <li><a href="http://phyro.phyroserver.com/" class="blue mr"><i class="icon-home small"></i>PHYRO</a></li>
+            <li><a href="/logout" class="green mr"><i class="icon-home small"></i>LOG OUT</a></li>
             {%else%}
             <li><a href="/{{usuario.username}}"><i class="icon-home small"></i>{{usuario.username}}</a></li>
             <li><a href="/proyectos" class="blue"><i class="icon-html5 small"></i>MIS PROYECTOS</a></li>
