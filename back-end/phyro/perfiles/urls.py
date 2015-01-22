@@ -5,18 +5,11 @@ admin.autodiscover()
 
 urlpatterns=patterns('perfiles.views',
     url(r'^$','index_perfil'),
+    url(r'^edit/$','editar_view'),
     url(r'^proyectos/$','proyectos_view'),
+    url(r'^proyectos/nuevo/$','proyecto_nuevo'),
+    url(r'^(?P<proyecto>[\w\-]+)/$','proyecto_view'),
+    url(r'^(?P<proyecto>[\w\-]+)/edit$','proyecto_editar'),
     #url(r'^tag/(?P<tag>[\w\-]+)/$','tag_aviso'),
     #url(r'^(?P<perfil>[\w\-]+)/$','perfil_view'),
 )
-
-if settings.DEBUG:
-    urlpatterns+=patterns('',
-        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root':settings.MEDIA_ROOT,} ),
-    )
-
-    urlpatterns+=patterns('',
-        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root':settings.STATICFILES_DIRS,} ),
-    )

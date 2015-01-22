@@ -1,0 +1,38 @@
+{% extends "home/index_SEO.html" %}
+{% block contenido %}
+<section class="padding-top ">
+    <hr>
+    {%if proyecto%}
+    <article class="row">
+    	<div class="large-12 columns text-center ">
+          <h2>Proyecto: <strong>{{proyecto.titulo}} </strong></h2>
+          {%if proyecto.borrador%}
+          <h5>En cuanto desmarques la casilla de borrador, se enviara como solicitud de presupuesto al equipo de phyroserver. Toma tu tiempo para aclarar tus ideas</h5>
+          {%endif%}
+          {%if mensaje%}
+          <h5>{{mensaje}}</h5>
+          {%endif%}
+          <br>
+        </div>
+        <div class="large-6 columns text-center ">
+          <form enctype="multipart/form-data" method="post" action="">{% csrf_token %}
+            <br>
+            {{formProyecto}}
+            <br>
+            <button type="submit" name="actualizar" class="button round expand zeroM CTA"><strong>Actualizar</strong></button>
+          </form>
+        </div>
+        <div class="large-6 columns text-center">
+        	<br>
+        	<br>
+        	<img class="th" src="{%if proyecto.logo%}{{MEDIA_URL}}{{proyecto.logo}}{%else%}{{STATIC_URL}}img/zombie_project.png{%endif%}" alt="Somos una Agencia de Desarrollo y Diseño Web Autodidactas y Apasionados de la web">
+        </div>
+    </article>
+    {%endif%}
+    <div class="padding-top"></div>
+    
+</section>
+
+{% endblock %}
+
+

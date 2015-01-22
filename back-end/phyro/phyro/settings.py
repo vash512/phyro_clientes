@@ -19,6 +19,7 @@ INSTALLED_APPS = (
     'django_summernote', 
     'south',
     'clientes',
+    'django_cleanup',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,21 +1,23 @@
 # -*- coding: utf-8 -*-
-from actions import Archivador
-from django.forms import ModelForm
+#http y redireccionamientos
 from django.shortcuts import render_to_response
 from django.shortcuts import redirect
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.http import HttpResponsePermanentRedirect as redirect301
-from django.contrib.auth.forms import AuthenticationForm
+
+#autentificacion
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from clientes.models import Cliente
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
-class PerfilForm(ModelForm):
-    class Meta:
-        model = Cliente
-        fields = ["correo", "nombre", "preferencias", "descripcion"]
+#modelos y formularios
+from clientes.models import Cliente
+from clientes.forms import PerfilRegistroForm
+
+#otros
+from actions import Archivador
+
 
 
 
@@ -72,7 +74,7 @@ def registro(request):
     else:
         registrado=False
         if request.method=='POST':
-            fRegistro=PerfilForm(request.POST)
+            fRegistro=PerfilRegistroForm(request.POST)
             fUsuario=UserCreationForm(request.POST)
             if fUsuario.is_valid() and fRegistro.is_valid():
                 usuario=fUsuario.save()
@@ -82,7 +84,7 @@ def registro(request):
                 registrado=True
 
         else:
-            fRegistro=PerfilForm()
+            fRegistro=PerfilRegistroForm()
             fUsuario=UserCreationForm()
         ctx={"registro":fRegistro, "fUsuario":fUsuario, "registrado":registrado}
         return render_to_response('home/registro.html', ctx,

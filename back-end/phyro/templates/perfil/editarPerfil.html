@@ -1,0 +1,32 @@
+{% extends "home/index_SEO.html" %}
+{% block contenido %}
+<section class="padding-top ">
+    <hr>
+    {%if perfil%}
+    <article class="row">
+    	<div class="large-12 columns text-center ">
+          <h2>Perfil de la Cuenta {{usuario.username}} </strong></h2>
+          <br>
+        </div>
+        <div class="large-6 columns text-center ">
+          <form enctype="multipart/form-data" method="post" action=".">{% csrf_token %}
+            <br>
+            {{formPerfil}}
+            <br>
+            <button type="submit" name="actualizar" class="button round expand zeroM CTA"><strong>Actualizar Datos</strong></button>
+          </form>
+        </div>
+        <div class="large-6 columns text-center">
+            <img class="th" src="{%if perfil.imagen%}{{MEDIA_URL}}{{perfil.imagen}}{%else%}{{STATIC_URL}}img/user-icon.png{%endif%} " alt="Somos una Agencia de Desarrollo y Diseño Web Autodidactas y Apasionados de la web">
+        </div>
+    </article>
+    {%endif%}
+
+
+    <div class="padding-top"></div>
+    
+</section>
+
+{% endblock %}
+
+

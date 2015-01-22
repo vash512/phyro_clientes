@@ -1,0 +1,50 @@
+{% extends "home/index_SEO.html" %}
+{% block contenido %}
+<section class="padding-top ">
+    <hr>
+    <article class="row">
+    	<div class="large-12 columns text-center ">
+          <h2>Tu lista de Proyectos {{usuario.username}} </strong></h2>
+          <br>
+        </div>
+        <div class="large-6 columns text-center ">
+        	{%if proyectos%}
+        	<div class="large-12 columns text-center ">
+	        	<div class="large-8 columns text-center ">
+	        		Proyecto
+	        	</div>
+	        	<div class="large-2 columns text-center ">
+	        		Editar
+	        	</div>
+	        	<div class="large-2 columns text-center ">
+	        		Eliminar
+	        	</div>
+	        </div>
+        	{%for proyecto in proyectos%}
+        	<div class="large-12 columns text-center ">
+	        	<div class="large-8 columns text-center ">
+	        		<a href="/{{usuario.username}}/{{proyecto.url}}">{{proyecto.proyecto.titulo}}</a>
+	        	</div>
+	        	<div class="large-2 columns text-center ">
+	        		<a href="/{{usuario.username}}/{{proyecto.url}}/edit">Editar</a>
+	        	</div>
+	        	<div class="large-2 columns text-center ">
+	        		<a href="#">Eliminar</a>
+	        	</div>
+	        </div>
+        	{%endfor%}
+        	{%else%}
+        	<h5>Aun no tienes proyectos registrados, pero si tienes una idea ahora, puedes empesar a registrarla desde <a href="/{{usuario.username}}/proyectos/nuevo/">Este enlase</a></h5>
+        	{%endif%}
+        </div>
+        <div class="large-6 columns text-center">
+            <img class="th" src="{{STATIC_URL}}img/wire1.jpeg" alt="Somos una Agencia de Desarrollo y Diseño Web Autodidactas y Apasionados de la web">
+        </div>
+    </article>
+    <div class="padding-top"></div>
+    
+</section>
+
+{% endblock %}
+
+

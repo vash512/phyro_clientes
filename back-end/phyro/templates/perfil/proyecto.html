@@ -1,0 +1,99 @@
+{% extends "home/index_SEO.html" %}
+{% block contenido %}
+<section class="padding-top ">
+    <hr>
+    {%if proyecto%}
+    <article class="row">
+    	<div class="large-12 columns text-center ">
+          <h2>Proyecto: <strong>{{proyecto.proyecto.titulo}} </strong> <a href="/{{usuario.username}}/{{proyecto.url}}/edit ">editar</a></h2>
+          {%if proyecto.proyecto.borrador%}
+          <h5>Parese que este proyecto es un borrador, Puedes terminarlo en <a href="/{{usuario.username}}/{{proyecto.url}}/edit ">Edicion</a></h5>
+          {%endif%}
+          <br>
+        </div>
+        <div class="large-6 columns text-center ">
+        	{%if proyecto.proyecto.eslogan%}
+	        <div class="large-12 columns text-center ">
+	        	<h3>{{proyecto.proyecto.eslogan}}</h3>
+	        </div>
+	        {%endif%}
+
+	        {%if proyecto.proyecto.descripcion%}
+	        <div class="large-12 columns text-center ">
+	        	{{proyecto.proyecto.descripcion|safe}}
+	        </div>
+	        {%else%}
+	        <div class="large-12 columns text-center ">
+	        	<h5>Sin Descripcion</h5>
+	        </div>
+	        {%endif%}
+
+	        {%if proyecto.proyecto.mantra_interno%}
+	        <div class="large-12 columns text-center ">
+	        	<h5>Mantra de Trabajo Interno: {{proyecto.proyecto.mantra_interno}}</h5>
+	        </div>
+	        {%endif%}
+
+	        {%if proyecto.proyecto.mantra_externo%}
+	        <div class="large-12 columns text-center ">
+	        	<h5>Mantra hacia los Clientes: {{proyecto.proyecto.mantra_externo}}</h5>
+	        </div>
+	        {%endif%}
+
+	        {%if proyecto.proyecto.requerimientos%}
+	        <div class="large-12 columns text-center ">
+	        	<ul class="toolPhyro" data-orbit 
+                  data-options="animation_speed:800;
+                  timer_speed: 2500;
+                  slide_number: false;
+                  pause_on_hover: false;
+                  navigation_arrows:false;
+                  bullets:true;">
+	        	{%for req in proyecto.proyecto.requerimientos.all%}
+                <li><h3><a href="#"><strong>{{req}}</strong></a></h3></li>
+                {%endfor%}
+                </ul>
+	        </div>
+	        {%endif%}
+
+	        {%if proyecto.proyecto.otrRec%}
+	        <div class="large-12 columns text-center ">
+	        	<h5>Otros Requerimientos: {{proyecto.proyecto.otrRec}}</h5>
+	        </div>
+	        {%else%}
+	        {%endif%}
+
+	        {%if proyecto.proyecto.inicioD%}
+	        <div class="large-12 columns text-center ">
+	        	<h5>Fecha Optima para iniciarel proyecto: {{proyecto.proyecto.inicioD}}</h5>
+	        </div>
+	        {%endif%}
+
+	        {%if proyecto.proyecto.finalP%}
+	        <div class="large-12 columns text-center ">
+	        	<h5>Fecha esperada para terminarlo: {{proyecto.proyecto.finalP}}</h5>
+	        </div>
+	        {%endif%}
+
+	        {%if proyecto.proyecto.presupuesto%}
+	        <div class="large-12 columns text-center ">
+	        	<h5>Presupuesto contemplado por el cliente: ${{proyecto.proyecto.presupuesto}}</h5>
+	        </div>
+	        {%endif%}
+        </div>
+
+
+
+
+        <div class="large-6 columns text-center">
+        	<img class="th" src="{%if proyecto.proyecto.logo%}{{MEDIA_URL}}{{proyecto.proyecto.logo}}{%else%}{{STATIC_URL}}img/zombie_project.png{%endif%}" alt="Somos una Agencia de Desarrollo y Diseño Web Autodidactas y Apasionados de la web">
+        </div>
+    </article>
+    {%endif%}
+    <div class="padding-top"></div>
+    
+</section>
+
+{% endblock %}
+
+

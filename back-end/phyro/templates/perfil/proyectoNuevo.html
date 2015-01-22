@@ -1,0 +1,44 @@
+{% extends "home/index_SEO.html" %}
+{% block contenido %}
+<section class="padding-top ">
+    <hr>
+    {%if url%}
+    <article class="row">
+    	<div class="large-12 columns text-center ">
+    		<meta http-equiv="Refresh" content="5;url=/{{usuario.username}}/{{url}}">
+          	<h5>Tu proyecto se a guardado exitosamente, Seras redirigido a su pagina en cinco segundos. En caso contrario, puedes acceder haciendo click <a href="/{{usuario.username}}/{{url}}">aquí</a></h5>
+        </div>
+    </article>
+    {%else%}
+    <article class="row">
+    	<div class="large-12 columns text-center ">
+          <h2>Un Nuevo Proyecto <strong>{{usuario.username}} </strong></h2>
+          {%if tituloRepetido%}
+          <h5>Parese un buen titulo, pero ya tienes un Proyecto con ese nombre, puedes <a href="/{{usuario.username}}/{{titulo}} "><strong>Editarlo aqui</strong></a>, o poner uno diferente</h5>
+          {%else%}
+          <h5>Te recomendamos dedicarle algo de tiempo, ya que sera el primer contacto con nosotros y con el podremos mandarte un presupuesto, pero si deseas puedes guardarlo como borrador y terminarlo mas adelante, solo necesitasr ponerle un <strong>Titulo</strong></h5>
+          {%endif%}
+          <br>
+        </div>
+        <div class="large-6 columns text-center ">
+          <form enctype="multipart/form-data" method="post" action=".">{% csrf_token %}
+            <br>
+            {{formProyecto}}
+            <br>
+            <button type="submit" name="guardar" class="button round expand zeroM CTA"><strong>Guardar</strong></button>
+          </form>
+        </div>
+        <div class="large-6 columns text-center">
+        	<br>
+        	<br>
+        	<img class="th" src="{{STATIC_URL}}img/zombie_project.png" alt="Somos una Agencia de Desarrollo y Diseño Web Autodidactas y Apasionados de la web">
+        </div>
+    </article>
+    {%endif%}
+    <div class="padding-top"></div>
+    
+</section>
+
+{% endblock %}
+
+

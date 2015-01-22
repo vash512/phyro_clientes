@@ -13,7 +13,9 @@
             <p class="text-right hide-for-small-only nav-movil">
                 {%if usuario%}
                 <a href="/{{usuario.username}}" class="yellow mr">{{usuario.username}}</a>
-                <a href="/proyectos" class="orange mr">MIS PROYECTOS</a>
+                <a href="/{{usuario.username}}/edit" class="orange mr">EDITAR PERFIL</a>
+                <a href="/{{usuario.username}}/proyectos" class="orange mr">MIS PROYECTOS</a>
+                <a href="/{{usuario.username}}/proyectos/nuevo" class="orange mr">NUEVO PROYECTO</a>
                 <a href="http://phyro.phyroserver.com/" class="blue mr">PHYRO</a>
                 <a href="/logout" class="green mr">LOG OUT</a>
                 <a href="/contacto" class="button round success tiny"><strong>CONTACTANOS!</strong></a>
